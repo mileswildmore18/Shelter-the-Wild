@@ -1,0 +1,77 @@
+[
+  {
+    "username": "404Pandas",
+    "email": "404pandas@gmail.com",
+    "password": "testtest"
+  },
+  {
+    "username": "TestUserName",
+    "email": "test@gmail.com",
+    "password": "testtest"
+  },
+  {
+    "username": "BunnyLover",
+    "email": "BunnyLover@gmail.com",
+    "password": "testtest"
+  },
+  {
+    "username": "DogLover",
+    "email": "DogLover@gmail.com",
+    "password": "testtest"
+  },
+  {
+    "username": "CatEnthusiast",
+    "email": "CatEnthusiast@gmail.com",
+    "password": "testtest"
+  },
+  {
+    "username": "CatLover",
+    "email": "CatLover@gmail.com",
+    "password": "testtest"
+  },
+  {
+    "username": "BirdLover",
+    "email": "BirdLover@gmail.com",
+    "password": "testtest"
+  },
+  {
+    "username": "FerretLover",
+    "email": "FerretLover@gmail.com",
+    "password": "testtest"
+  },
+  {
+    "username": "FishLover",
+    "email": "FishLover@gmail.com",
+    "password": "testtest"
+  },
+  {
+    "username": "FrogLover",
+    "email": "FrogLover@gmail.com",
+    "password": "testtest"
+  },
+  {
+    "username": "GPLover",
+    "email": "GPLover@gmail.com",
+    "password": "testtest"
+  },
+  {
+    "username": "HamsterLover",
+    "email": "HamsterLover@gmail.com",
+    "password": "testtest"
+  },
+  {
+    "username": "HedgehogLover",
+    "email": "HedgehogLover@gmail.com",
+    "password": "testtest"
+  },
+  {
+    "username": "RabbitLover",
+    "email": "RabbitLover@gmail.com",
+    "password": "testtest"
+  },
+  {
+    "username": "SnakeLover",
+    "email": "SnakeLover@gmail.com",
+    "password": "testtest"
+  }
+]

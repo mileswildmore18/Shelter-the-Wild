@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 263.25 382.63">
+  <defs>
+    <style>
+      .cls-1 {
+        mask: url(#mask);
+      }
+
+      .cls-2 {
+        filter: url(#luminosity-noclip);
+      }
+
+      .cls-3 {
+        isolation: isolate;
+      }
+
+      .cls-4 {
+        mix-blend-mode: soft-light;
+        opacity: .62;
+      }
+
+      .cls-4, .cls-5 {
+        fill: #93c6eb;
+      }
+
+      .cls-4, .cls-5, .cls-6, .cls-7 {
+        stroke-width: 0px;
+      }
+
+      .cls-8 {
+        mask: url(#mask-1);
+      }
+
+      .cls-6 {
+        fill: #fff;
+      }
+
+      .cls-7 {
+        fill: url(#Degradado_sin_nombre_2);
+        mix-blend-mode: multiply;
+      }
+    </style>
+    <filter id="luminosity-noclip" x="64.82" y="163.75" width="171.89" height="237.64" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="SourceGraphic" in2="bg"/>
+    </filter>
+    <filter id="luminosity-noclip-2" x="64.82" y="-8962.24" width="171.89" height="32766" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="SourceGraphic" in2="bg"/>
+    </filter>
+    <mask id="mask-1" x="64.82" y="-8962.24" width="171.89" height="32766" maskUnits="userSpaceOnUse"/>
+    <linearGradient id="Degradado_sin_nombre_2" data-name="Degradado sin nombre 2" x1="80.76" y1="374.66" x2="212.04" y2="147.27" gradientTransform="translate(-4.66 1.86) rotate(-.4)" gradientUnits="userSpaceOnUse">
+      <stop offset=".15" stop-color="#fff"/>
+      <stop offset=".19" stop-color="#eaeaea"/>
+      <stop offset=".3" stop-color="#adadad"/>
+      <stop offset=".41" stop-color="#787878"/>
+      <stop offset=".52" stop-color="#4d4d4d"/>
+      <stop offset=".62" stop-color="#2b2b2b"/>
+      <stop offset=".72" stop-color="#131313"/>
+      <stop offset=".81" stop-color="#050505"/>
+      <stop offset=".89" stop-color="#000"/>
+    </linearGradient>
+    <mask id="mask" x="64.82" y="163.75" width="171.89" height="237.64" maskUnits="userSpaceOnUse">
+      <g class="cls-2">
+        <g class="cls-8">
+          <path class="cls-7" d="M64.82,296.09c29.81,57.24,58.63,105.31,58.63,105.31,0,0,88.21-151.8,113.26-237.64-27.66,71.19-113.43,133.25-171.89,132.33Z"/>
+        </g>
+      </g>
+    </mask>
+  </defs>
+  <g class="cls-3">
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="_ÎÓÈ_1" data-name="—ÎÓÈ_1">
+        <g>
+          <path class="cls-5" d="M263.25,131.64C263.25,58.93,204.33,0,131.63,0S0,58.93,0,131.64c0,35.51,14.09,67.72,36.95,91.4l-.15-1.72s76.88,71.49,91.62,161.27h7.29c14.74-89.78,91.19-161.27,91.19-161.27l-.63.91c22.89-23.69,36.99-55.06,36.99-90.59Z"/>
+          <circle class="cls-6" cx="131.63" cy="134.3" r="100.06" transform="translate(-13.95 253.34) rotate(-84.85)"/>
+        </g>
+        <g class="cls-1">
+          <path class="cls-4" d="M85.94,279.39c5.04,7.22,11.89,17.83,18.75,31.4,5.02,9.94,8.23,17.98,14.63,34.04,0,0,3.86,9.67,14.33,37.8,7.88-37.02,20.35-63.47,29.89-80.37,20.5-36.32,41.54-53.44,59.99-98,7.03-16.99,11.01-31.48,13.18-40.51-3.19,12.19-16.74,58.11-62.6,89.23-2.37,1.61-9.88,6.7-20.63,11.74-27.15,12.75-52.25,14.72-67.55,14.66Z"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,90 @@
+.flexbox-turn-on {
+  display: flex;
+}
+
+#and-another-one {
+  align-items: center;
+}
+
+#right-header > * {
+  margin-left: 15px;
+}
+
+#furthest-right-header {
+  flex-direction: column;
+  align-items: center;
+}
+
+#avatar > * {
+  object-fit: contain !important;
+}
+
+#hidden-break {
+  background-color: pink;
+}
+
+/* MUI Breakpoints */
+/* xs, extra-small: 0px
+sm, small: 600px
+md, medium: 900px
+lg, large: 1200px
+xl, extra-large: 1536px */
+@media screen and (max-width: 900px) {
+  #right-header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #padding-xs {
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+  #and-another-one {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #right-header {
+    justify-content: flex-end;
+  }
+  #furthest-right-header {
+    display: flex;
+    flex-direction: column;
+  }
+  #padding-xs {
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+}
+@media screen and (max-width: 724px) {
+  #right-header {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 600px) {
+  #and-another-one {
+    flex-direction: column;
+  }
+  #furthest-right-header-avatar {
+    flex-direction: row;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  #right-header {
+    width: 60%;
+  }
+  #and-another-one {
+    width: 80%;
+  }
+  #description-search {
+    width: 80% !important;
+  }
+  .MuiAutocomplete-root.MuiAutocomplete-hasPopupIcon.css-1wuilmg-MuiAutocomplete-root {
+    width: 120% !important;
+  }
+  #auto-complete-label {
+    text-overflow: ellipsis !important;
+    width: 60%;
+  }
+}
