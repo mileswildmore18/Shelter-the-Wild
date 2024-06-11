@@ -1,0 +1,35 @@
+#animal-type {
+  color: pink;
+  display: flex !important;
+}
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border-color: transparent !important;
+  text-transform: none;
+  font-style: unset !important;
+}
+
+@media screen and (max-width: 900px) {
+  #xs-hidden {
+    display: none !important;
+  }
+  #xs-display {
+    display: flex !important;
+  }
+  #description-search {
+    width: 50% !important;
+  }
+}
+@media screen and (max-width: 800px) {
+  #description-search {
+    width: 30% !important;
+  }
+}
+@media screen and (max-width: 700px) {
+  #description-search {
+    width: 20% !important;
+  }
+  #text-field {
+    width: 40% !important;
+  }
+}
