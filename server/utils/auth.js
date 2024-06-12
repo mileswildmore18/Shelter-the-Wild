@@ -1,10 +1,17 @@
 const { GraphQLError } = require("graphql");
+const mongoose = require('mongoose');
 const jwt = require("jsonwebtoken");
 
-const secret = "puppos";
-const expiration = "2h";
+const UserSchema = mongoose.Schema({
+  username: String,
+  password: String,
+});
 
-module.exports = {
+UserSchema.virtual('token').get(function() {
+  return jwt.sign({ _id: this._id }, process.env.SECRET, { expiresIn: '2h'});
+})
+
+module.exports =  {
   authMiddleware: function ({ req }) {
     // Token sent via req.body, req.query, or headers
     let token = req.body.token || req.query.token || req.headers.authorization;
