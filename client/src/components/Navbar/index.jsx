@@ -17,18 +17,15 @@ const Navbar = () => {
 
   return (
     <AppBar position='static'>
-      <Toolbar id='padding-xs'>
-        <Link to='/' style={{ textDecoration: "none", color: "inherit" }}>
-          <img src={logo} alt='PARSR Logo' style={{ height: "100px" }} />
-        </Link>
+      <Toolbar id='padding-xs' style={{ display: "flex", justifyContent: "space-between" }}>
+        <img src={logo} alt='PARSR Logo' style={{ height: "100px" }} />
 
-        <div style={{ flexGrow: 1 }}></div>
+        <Link to='/' style={{ textDecoration: "none", color: "inherit" }}>
+          <h1 style={{ marginLeft: "450px" }}>Shelter the Wild</h1>
+        </Link>
 
         <div className='flexbox-turn-on' id='right-header'>
           <>
-            <Button color='inherit' component={Link} to='/map'>
-              Map
-            </Button>
             <Button color='inherit' component={Link} to='/donate'>
               Donate
             </Button>
@@ -46,12 +43,11 @@ const Navbar = () => {
                   <Avatar
                     component={Link}
                     to='/profile'
-                    src={CatImage} // Empty src
+                    src={CatImage}
                     alt='Profile'
                     sx={{ height: "40px" }}
                     id='avatar'
                   >
-                    {/* You can add an icon or initials inside the Avatar if needed */}
                   </Avatar>
                   <Button color='inherit' onClick={logout}>
                     Logout
@@ -61,9 +57,6 @@ const Navbar = () => {
                 <div className='flexbox-turn-on' id='furthest-right-header'>
                   <Button color='inherit' component={Link} to='/login'>
                     Login
-                  </Button>
-                  <Button color='inherit' component={Link} to='/signup'>
-                    Signup
                   </Button>
                 </div>
               )}
