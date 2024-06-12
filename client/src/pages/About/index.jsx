@@ -1,4 +1,4 @@
-const AboutUs = () => {
+const About = () => {
   return <>About</>;
 };
-export default AboutUs;
+export default About;

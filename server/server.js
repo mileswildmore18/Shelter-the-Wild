@@ -3,6 +3,10 @@ const { ApolloServer } = require("@apollo/server");
 const { expressMiddleware } = require("@apollo/server/express4");
 require("dotenv").config();
 
+const secret = process.env.SECRET;
+console.log(secret);
+
+
 // Built-in modules
 const express = require("express");
 const path = require("path");
