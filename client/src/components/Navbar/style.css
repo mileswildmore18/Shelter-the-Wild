@@ -88,3 +88,9 @@ xl, extra-large: 1536px */
     width: 60%;
   }
 }
+
+h1 {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 3.5em;
+  
+}

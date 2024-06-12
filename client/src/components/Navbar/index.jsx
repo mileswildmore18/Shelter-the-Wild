@@ -21,7 +21,7 @@ const Navbar = () => {
         {/* <img src={logo} alt='PARSR Logo' style={{ height: "100px" }} /> */}
 
         <Link to='/' style={{ textDecoration: "none", color: "inherit" }}>
-          <h1 style={{ marginLeft: "450px" }}>Shelter the Wild</h1>
+          <h1 style={{ marginLeft: "650px" }}>Shelter the Wild</h1>
         </Link>
 
         <div className='flexbox-turn-on' id='right-header'>

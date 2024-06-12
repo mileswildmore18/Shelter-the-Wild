@@ -33,7 +33,7 @@
     width: 600px; /* Adjust as needed */
     height: auto;
     margin: 0 10px;
-    border-radius: 300px;
+    border-radius: 100%;
     
 }
 
@@ -70,3 +70,5 @@
     visibility: visible;
     opacity: 1;
 }
+
+

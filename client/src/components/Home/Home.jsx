@@ -8,6 +8,7 @@ import animal3 from '../Images/pitbull.jpg';
 const Home = () => {
     return (
         <div className="home">
+            <h1>Make A Difference!</h1>
             <div className="animal-images">
                 <a href="/animal1" className="animal-link">
                     <img className="animal-image" src={animal1} alt="Animal 1" />
@@ -15,11 +16,11 @@ const Home = () => {
                 </a>
                 <a href="/animal2" className="animal-link">
                     <img className="animal-image" src={animal2} alt="Animal 2" />
-                    <span className="tooltip">Donate</span>
+                    <span className="tooltip">Foster</span>
                 </a>
                 <a href="/animal3" className="animal-link">
                     <img className="animal-image" src={animal3} alt="Animal 3" />
-                    <span className="tooltip">View</span>
+                    <span className="tooltip">Volunteer</span>
                 </a>
             </div>
         </div>

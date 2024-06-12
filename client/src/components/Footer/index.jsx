@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer-content">
-                <p>&copy; {new Date().getFullYear()} All Animal Rescue & Rehabilitation</p>
+                <p>&copy; {new Date().getFullYear()} Shelter The Wild</p>
                 <a href="/contact">Contact Us</a>
                 <div className="social-icons">
                     <a href="https://www.facebook.com/yourpage"><FaFacebook /></a>
