@@ -12,6 +12,7 @@
     "render-build": "npm install && npm run build"
   },
   "dependencies": {
+    "gsap": "^3.12.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
