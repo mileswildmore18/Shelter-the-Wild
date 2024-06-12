@@ -33,6 +33,42 @@
     width: 600px; /* Adjust as needed */
     height: auto;
     margin: 0 10px;
-    border-radius: 300px;
+    border-radius: 100%;
     
 }
+
+.animal-image {
+    transition: transform 0.2s;
+}
+
+.animal-image:hover {
+    transform: scale(1.1);
+}
+
+.animal-link {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip {
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.animal-link:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+
