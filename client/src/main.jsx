@@ -15,6 +15,7 @@ import Pet from "./pages/Pet";
 import MapPage from "./pages/Map/";
 import Test from "./pages/Test";
 import Donate from "./pages/Donate";
+import Home from "./pages/Home";
 
 const router = createBrowserRouter([
   {

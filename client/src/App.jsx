@@ -9,7 +9,8 @@ import { setContext } from "@apollo/client/link/context";
 import "./style.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import AboutUs from "./components/AboutUs";
+import AboutUs from "./components/AboutUs/AboutUs";
+import Home from "./components/Home/Home";
 
 // Can use public API uri
 const httpLink = createHttpLink({
@@ -41,6 +42,7 @@ const App = () => {
     <>
       <ApolloProvider client={client}>
         <Navbar />
+        <Home />
         <AboutUs />
         <Outlet />
         <Footer />
