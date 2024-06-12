@@ -1,8 +1,9 @@
 .footer {
-    background-color: #333;
+    background-color: rgb(0, 106, 220);
     color: #fff;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
+    
 }
 
 .footer a {
@@ -11,6 +12,8 @@
 }
 
 .social-icons a {
+    display: inline-block;
+    justify-content: left;
     font-size: 1.5em;
-    margin: 0 10px;
+    margin: 10px 20px;
 }
