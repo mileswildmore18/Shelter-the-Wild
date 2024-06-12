@@ -1,0 +1,28 @@
+@keyframes wag {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-20deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(20deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.dog {
+    position: relative;
+    width: 25%;
+    height: 145px;
+    top:10px;
+    background: url('https://static3.depositphotos.com/1000792/213/v/450/depositphotos_2136652-stock-illustration-playful-puppy.jpg') no-repeat center center;
+    background-size: contain;
+
+}
+
+.dog .tail {
+    position: absolute;
+    width: 20%;
+    height: 90px;
+    background: url('https://m.media-amazon.com/images/I/61mYflDduoL.jpg') no-repeat center center;
+    background-size: contain;
+    left: 100%;
+    transform-origin: top right;
+    animation: wag is infinite;
+}
