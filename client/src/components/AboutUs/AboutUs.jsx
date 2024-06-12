@@ -1,7 +1,7 @@
 import React from 'react';
-import Mission from './Mission';
-import History from './History';
-import Team from './Team';
+import Mission from '../AboutUs/Mission';
+import History from '../AboutUs/History';
+import Team from '../AboutUs/Team';
 import './AboutUs.css';
 
 const AboutUs = () => {

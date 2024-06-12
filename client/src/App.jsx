@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import AboutUs from "./components/AboutUs/AboutUs";
 import DogAnimation from "./components/DogAnimation/DogAnimation";
+import Home from "./components/Home/Home";
 
 // Can use public API uri
 const httpLink = createHttpLink({
@@ -42,7 +43,11 @@ const App = () => {
     <>
       <ApolloProvider client={client}>
         <Navbar />
+
         <DogAnimation />
+
+        <Home />
+
         <AboutUs />
         <Outlet />
         <Footer />
