@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <AppBar position='static'>
       <Toolbar id='padding-xs' style={{ display: "flex", justifyContent: "space-between" }}>
-        <img src={logo} alt='PARSR Logo' style={{ height: "100px" }} />
+        {/* <img src={logo} alt='PARSR Logo' style={{ height: "100px" }} /> */}
 
         <Link to='/' style={{ textDecoration: "none", color: "inherit" }}>
           <h1 style={{ marginLeft: "450px" }}>Shelter the Wild</h1>
