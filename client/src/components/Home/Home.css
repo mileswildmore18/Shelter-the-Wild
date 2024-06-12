@@ -21,3 +21,18 @@
     font-size: 1.2em;
     color: #666;
 }
+
+.animal-images {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+  
+}
+
+.animal-images img {
+    width: 600px; /* Adjust as needed */
+    height: auto;
+    margin: 0 10px;
+    border-radius: 300px;
+    
+}
