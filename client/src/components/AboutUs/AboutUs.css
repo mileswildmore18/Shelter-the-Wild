@@ -1,0 +1,23 @@
+.about-us {
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.about-us h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-us section {
+    margin-bottom: 40px;
+}
+
+.about-us h2 {
+    color: rgb(221, 35, 60);
+    border-bottom: 2px solid #eee;
+}
+
+.about-us p {
+    color: rgb(0, 124, 6);
+    line-height: 1.6;
+}
