@@ -22,52 +22,49 @@ const Navbar = () => {
         <Link to='/' style={{ textDecoration: "none", color: "inherit" }}>
           <h1 style={{ marginLeft: "550px" }}>Shelter the Wild</h1>
 
-        {/* <img src={logo} alt='PARSR Logo' style={{ height: "100px" }} /> */}
-
-        <Link to='/' style={{ textDecoration: "none", color: "inherit" }}>
-          <h1 style={{ marginLeft: "650px" }}>Shelter the Wild</h1>
-
+          {/* <img src={logo} alt='PARSR Logo' style={{ height: "100px" }} /> */}
         </Link>
+          
 
-        <div className='flexbox-turn-on' id='right-header'>
-          <>
-            <Button color='inherit' component={Link} to='/donate'>
-              Donate
-            </Button>
-          </>
-          <div className='flexbox-turn-on' id='and-another-one'>
+          <div className='flexbox-turn-on' id='right-header'>
             <>
-              <Search id='hidden-break' />
+              <Button color='inherit' component={Link} to='/donate'>
+                Donate
+              </Button>
             </>
-            <>
-              {Auth.loggedIn() ? (
-                <div
-                  className='flexbox-turn-on'
-                  id='furthest-right-header-avatar'
-                >
-                  <Avatar
-                    component={Link}
-                    to='/profile'
-                    src={CatImage}
-                    alt='Profile'
-                    sx={{ height: "40px" }}
-                    id='avatar'
+            <div className='flexbox-turn-on' id='and-another-one'>
+              <>
+                <Search id='hidden-break' />
+              </>
+              <>
+                {Auth.loggedIn() ? (
+                  <div
+                    className='flexbox-turn-on'
+                    id='furthest-right-header-avatar'
                   >
-                  </Avatar>
-                  <Button color='inherit' onClick={logout}>
-                    Logout
-                  </Button>
-                </div>
-              ) : (
-                <div className='flexbox-turn-on' id='furthest-right-header'>
-                  <Button color='inherit' component={Link} to='/login'>
-                    Login
-                  </Button>
-                </div>
-              )}
-            </>
+                    <Avatar
+                      component={Link}
+                      to='/profile'
+                      src={CatImage}
+                      alt='Profile'
+                      sx={{ height: "40px" }}
+                      id='avatar'
+                    >
+                    </Avatar>
+                    <Button color='inherit' onClick={logout}>
+                      Logout
+                    </Button>
+                  </div>
+                ) : (
+                  <div className='flexbox-turn-on' id='furthest-right-header'>
+                    <Button color='inherit' component={Link} to='/login'>
+                      Login
+                    </Button>
+                  </div>
+                )}
+              </>
+            </div>
           </div>
-        </div>
       </Toolbar>
     </AppBar>
   );
