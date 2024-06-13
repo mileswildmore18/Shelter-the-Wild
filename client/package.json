@@ -26,6 +26,7 @@
     "react-dom": "^18.2.0",
     "react-ol-wrapper": "^0.2.9",
     "react-router-dom": "^6.21.1",
+    "react-swipeable-views": "^0.14.0",
     "vitest": "^1.1.0"
   },
   "devDependencies": {
