@@ -20,7 +20,7 @@ const Navbar = () => {
       <Toolbar id='padding-xs' style={{ display: "flex", justifyContent: "space-between" }}>
 
         <Link to='/' style={{ textDecoration: "none", color: "inherit" }}>
-          <h1 style={{ marginLeft: "550px" }}>Shelter the Wild</h1>
+          <h1 style={{ marginLeft: "650px" }}>Shelter the Wild</h1>
 
           {/* <img src={logo} alt='PARSR Logo' style={{ height: "100px" }} /> */}
         </Link>

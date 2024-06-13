@@ -1,3 +1,4 @@
+//TODO: remove missing pets 
 import { useQuery } from "@apollo/client";
 import { QUERY_MISSING_PETS } from "../../utils/queries";
 import { Link } from "react-router-dom";
@@ -38,7 +39,7 @@ const MissingPetsList = () => {
   if (!missingPets || !missingPets.length) {
     return (
       <Typography variant='h5'>
-        No missing pets in your area! Awesome!
+        {/* No missing pets in your area! Awesome! */}
       </Typography>
     );
   }
