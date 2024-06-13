@@ -15,9 +15,12 @@
 .about-us h2 {
     color: rgb(221, 35, 60);
     border-bottom: 2px solid #eee;
+    font-size: 30px;
 }
 
 .about-us p {
     color: rgb(0, 124, 6);
     line-height: 1.6;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
 }
