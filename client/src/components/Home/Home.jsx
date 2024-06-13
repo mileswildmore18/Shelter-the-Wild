@@ -4,6 +4,7 @@ import '../Home/Home.css';
 import animal1 from '../Images/cat.jpg';
 import animal2 from '../Images/corgi.jpg';
 import animal3 from '../Images/pitbull.jpg';
+import AxiosReq from '../API/AxiosReq';
 
 const Home = () => {
     return (
@@ -29,6 +30,7 @@ const Home = () => {
                     <img className="animal-image" src={animal3} alt="Animal 3" />
                 </a>
             </div>
+            <AxiosReq />
         </div>
     );
 };
