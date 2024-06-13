@@ -1,27 +1,27 @@
 [
   {
-    "username": "404Pandas",
-    "email": "404pandas@gmail.com",
+    "username": "miles",
+    "email": "miles@gmail.com",
     "password": "testtest"
   },
   {
-    "username": "TestUserName",
-    "email": "test@gmail.com",
+    "username": "alberto",
+    "email": "alberto@gmail.com",
     "password": "testtest"
   },
   {
-    "username": "BunnyLover",
-    "email": "BunnyLover@gmail.com",
+    "username": "val",
+    "email": "val@gmail.com",
+    "password": "testtest"
+  },
+  {
+    "username": "animalLover",
+    "email": "animalLover@gmail.com",
     "password": "testtest"
   },
   {
     "username": "DogLover",
     "email": "DogLover@gmail.com",
-    "password": "testtest"
-  },
-  {
-    "username": "CatEnthusiast",
-    "email": "CatEnthusiast@gmail.com",
     "password": "testtest"
   },
   {
@@ -35,23 +35,23 @@
     "password": "testtest"
   },
   {
-    "username": "FerretLover",
-    "email": "FerretLover@gmail.com",
+    "username": "mary",
+    "email": "mary@gmail.com",
     "password": "testtest"
   },
   {
-    "username": "FishLover",
-    "email": "FishLover@gmail.com",
+    "username": "john",
+    "email": "john@gmail.com",
     "password": "testtest"
   },
   {
-    "username": "FrogLover",
-    "email": "FrogLover@gmail.com",
+    "username": "krusty",
+    "email": "krusty@gmail.com",
     "password": "testtest"
   },
   {
-    "username": "GPLover",
-    "email": "GPLover@gmail.com",
+    "username": "kim",
+    "email": "kim@gmail.com",
     "password": "testtest"
   },
   {
