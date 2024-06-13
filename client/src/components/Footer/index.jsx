@@ -7,8 +7,8 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer-content">
-                <img src={logo} alt="Shelter The Wild Logo" className="footer-logo" /> {/* Add this line */}
-                <p>&copy; {new Date().getFullYear()} Shelter the Wild</p>
+                <img src={logo} alt="Shelter The Wild Logo" className="footer-logo" />
+                <p>&copy; {new Date().getFullYear()} <span style={{ fontStyle: 'italic' }}>Shelter the Wild</span></p>
                 <a href="/contact">Contact Us</a>
                 <div className="social-icons">
                     <a href="https://www.facebook.com/yourpage"><FaFacebook /></a>
