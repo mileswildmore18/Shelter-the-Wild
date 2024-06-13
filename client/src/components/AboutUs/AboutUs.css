@@ -1,6 +1,6 @@
 .about-us {
     padding: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: inherit;
 }
 
 .about-us h1 {
@@ -13,11 +13,14 @@
 }
 
 .about-us h2 {
-    color: rgb(221, 35, 60);
+    color: rgb(0, 0, 0);
     border-bottom: 2px solid #eee;
+    font-size: 30px;
 }
 
 .about-us p {
-    color: rgb(0, 124, 6);
+    color: rgba(0, 0, 0, 0.58);
     line-height: 1.6;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
 }

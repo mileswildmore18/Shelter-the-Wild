@@ -1,3 +1,4 @@
+//TODO: remove missing pets 
 import { useQuery } from "@apollo/client";
 import { QUERY_MISSING_PETS } from "../../utils/queries";
 import { Link } from "react-router-dom";
@@ -16,8 +17,8 @@ const MissingPetsList = () => {
   const { loading, error, data } = useQuery(QUERY_MISSING_PETS);
   const [copiedArray, setCopiedArray] = useState([]); // Track whether copy was successful for each pet
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  if (loading) return <p></p>;
+  if (error) return <p></p>;
 
   const missingPets = data.petsByMissing;
   console.log(missingPets);
@@ -38,7 +39,7 @@ const MissingPetsList = () => {
   if (!missingPets || !missingPets.length) {
     return (
       <Typography variant='h5'>
-        No missing pets in your area! Awesome!
+        {/* No missing pets in your area! Awesome! */}
       </Typography>
     );
   }

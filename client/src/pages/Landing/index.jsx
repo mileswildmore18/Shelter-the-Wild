@@ -3,7 +3,7 @@ import "./style.css";
 const Landing = () => {
   return (
     <>
-      <h1>Now Missing:</h1>
+      <h1></h1>
       <div id='missing-list'>
         <MissingPetsList />
       </div>
