@@ -4,53 +4,10 @@ const {
 } = require("apollo-server-express");
 const Pet = require("../models/Pet");
 const User = require("../models/User");
-const Marker = require("../models/Marker");
-const Post = require("../models/Post");
+const Breed = require("../models/Breed");
+const Group = require("../models/Group");
 const { signToken } = require("../utils/auth");
-const { GraphQLScalarType, Kind } = require("graphql");
 
-// custom scalar for GeoJSON
-const GeoJSONType = new GraphQLScalarType({
-  name: "GeoJSON",
-  description: "A GeoJSON object",
-  parseValue(value) {
-    return JSON.parse(value);
-  },
-  serialize(value) {
-    return JSON.stringify(value);
-  },
-  parseLiteral(ast) {
-    if (ast.kind === Kind.OBJECT) {
-      const value = {};
-      ast.fields.forEach((field) => {
-        value[field.name.value] = parseLiteral(field.value);
-      });
-      return value;
-    }
-    return null;
-  },
-});
-
-// Cusotm Scalar for date
-const DateScalar = new GraphQLScalarType({
-  name: "Date",
-  description: "Date custom scalar type",
-  parseValue(value) {
-    // Convert the input value (e.g., from a JSON payload) to a Date object
-    return new Date(value);
-  },
-  serialize(value) {
-    // Convert the Date object to a string for JSON serialization
-    return value.toISOString();
-  },
-  parseLiteral(ast) {
-    // Parse the date string from the GraphQL query into a Date object
-    if (ast.kind === Kind.STRING) {
-      return new Date(ast.value);
-    }
-    return null;
-  },
-});
 
 // Creates the functions that fulfill the queries defined in typeDefs
 const resolvers = {
@@ -167,16 +124,18 @@ const resolvers = {
       return { token, user };
     },
     // create marker
-    createMarker: async (
+    createBreed: async (
       parent,
       {
-        petId,
-        markerName,
-        markerDescription,
-        createdAt,
+        Breed,
+        breedDescription,
+        petName,
+        Group,
+        image,
+        description,
+        petId: Pet.id,
         coordinates,
         image,
-        geometry,
       },
       context
     ) => {
@@ -190,28 +149,28 @@ const resolvers = {
 
         console.log(pet);
 
-        const marker = await Marker.create({
-          markerName,
-          markerDescription,
-          createdAt,
-          coordinates,
+        const breed = await Breed.create({
+          breed,
+          breedDescription,
+          petName,
+          group,
           image,
-          geometry,
+          description,
           petId: pet.id,
           createdBy: context.user._id,
         });
         // Populate the createdBy field with the user data
-        const populatedMarker = await Marker.findById(marker._id).populate(
+        const populatedBreed = await Breed.findById(breed._id).populate(
           "createdBy",
           "petId"
         );
 
         // Return the created marker
-        return populatedMarker;
+        return populatedBreed;
       } else {
         throw new AuthenticationError("Not logged in");
       }
-    },
+    };
     // create Pet
     createPet: async (
       parent,

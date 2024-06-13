@@ -26,24 +26,21 @@ const typeDefs = `
     posts: [Post]
   }
 
-  type Post {
+  type Group {
     _id: ID
-    postContent: String
-    createdBy: User
-    createdAt: Date
-    petId: Pet
+    groupId: [groupNumber]
+    groupName: String
+    details: String
+    
   }
 
-  type Marker {
+  type Breed {
     _id: ID
-    petId: Pet
-    markerName: String
-    markerDescription: String
-    createdAt: Date
-    createdBy: User
-    coordinates: [Float]
+    animal: String
+    breed: String
+    description: String
     image: String
-    geometry: GeoJSON
+    group: ID!
   }
 
   type Auth {
@@ -51,23 +48,13 @@ const typeDefs = `
     user: User
   }
 
-
-  input MarkerData {
-    markerName: String!
-    markerDescription: String
-    createdAt: Date
-    coordinates: [Float]
-    image: String
-    geometry: GeoJSON
-    petId: ID!
   }
 
   input PetData {
     id: Int!
     petName: String
-    markers: [MarkerData]
+    breeds: [breedData]
   }
-
 
   enum AnimalType {
     DOG
@@ -89,13 +76,9 @@ const typeDefs = `
     me: User
     user(userId: ID!): User
     pets: [Pet]
-    petsByMissing(isMissing: Boolean!): [Pet]
     pet(petId: ID!): Pet
-    markers: [Marker]
-    marker(markerId: ID!): Marker
-    markersByPet(petId: ID!): [Marker]
-    posts: [Post]
-    post(postId: ID!): Post
+    Breeds: [Breed]
+    Group(groupId: ID!): Post
     postsByPet(petId: ID!): [Post]
  
 
@@ -104,11 +87,11 @@ const typeDefs = `
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    createMarker(marker: MarkerData): Marker
-    createPet(pet: PetData): Pet
-    addPost(petId: ID!, postContent: String!): Post
-    updatePost(postContent: String!): Post
-    removePost(postId: ID!): Post
+    createBreed(breed: BreedData): Breed
+    addGroup(groupId: ID!, postContent: String!): Post
+    createPet(pet: PetData): Post
+    updatePet(postContent: String!): Post
+    removePet(postId: ID!): Post
   }
 `;
 
