@@ -59,15 +59,6 @@ const typeDefs = `
   enum AnimalType {
     DOG
     CAT
-    BIRD
-    FERRET
-    FISH
-    FROG
-    GP
-    HAMSTER
-    HEDGEHOG
-    RABBIT
-    SNAKE
     OTHER
   }
 
@@ -80,8 +71,6 @@ const typeDefs = `
     Breeds: [Breed]
     Group(groupId: ID!): Post
     postsByPet(petId: ID!): [Post]
- 
-
   }
 
   type Mutation {
