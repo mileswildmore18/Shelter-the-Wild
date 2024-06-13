@@ -1,9 +1,9 @@
 const db = require("../config/connection");
-const { User, Pet, Marker, Post } = require("../models");
+const { User, Pet, Group , Breed } = require("../models");
 const petSeeds = require("./petSeeds.json");
 const userSeeds = require("./userSeeds.json");
-const markerSeeds = require("./markerSeeds.json");
-const postSeeds = require("./postSeeds.json");
+const breedSeeds = require("./breedSeeds.json");
+const groupSeeds = require("./groupSeeds.json");
 
 const seedDatabase = async () => {
   await db.sync({ force: true });
@@ -26,18 +26,18 @@ const seedDatabase = async () => {
   );
 
   // markers
-  for (const marker of markerSeeds) {
-    await Marker.create({
-      ...marker,
+  for (const breed of breedSeeds) {
+    await Breed.create({
+      ...breed,
       pet_id: pets[Math.floor(Math.random() * pets.length)].id,
       created_by: users[Math.floor(Math.random() * users.length)].id,
     });
   }
 
   // posts
-  for (const post of postSeeds) {
-    await Post.create({
-      ...post,
+  for (const group of groupSeeds) {
+    await Group.create({
+      ...group,
       pet_id: pets[Math.floor(Math.random() * pets.length)].id,
       created_by: users[Math.floor(Math.random() * users.length)].id,
     });

@@ -1,6 +1,6 @@
 const User = require("./User");
 const Pet = require("./Pet");
-const Marker = require("./Marker");
-const Post = require("./Post");
+const Group = require("./Group");
+const Breed = require("./Breed");
 
-module.exports = { User, Pet, Marker, Post };
+module.exports = { User, Pet, Group, Breed };
