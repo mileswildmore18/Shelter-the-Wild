@@ -11,16 +11,22 @@ const Home = () => {
             <h1>Make A Difference!</h1>
             <div className="animal-images">
                 <a href="/animal1" className="animal-link">
+                    <div className="overlay">
+                        <div className="text">Adopt</div>
+                    </div>
                     <img className="animal-image" src={animal1} alt="Animal 1" />
-                    <span className="tooltip">Adopt</span>
                 </a>
                 <a href="/animal2" className="animal-link">
+                    <div className="overlay">
+                        <div className="text">Foster</div>
+                    </div>
                     <img className="animal-image" src={animal2} alt="Animal 2" />
-                    <span className="tooltip">Foster</span>
                 </a>
                 <a href="/animal3" className="animal-link">
+                    <div className="overlay">
+                        <div className="text">Volunteer</div>
+                    </div>
                     <img className="animal-image" src={animal3} alt="Animal 3" />
-                    <span className="tooltip">Volunteer</span>
                 </a>
             </div>
         </div>
