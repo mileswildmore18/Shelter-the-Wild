@@ -20,12 +20,12 @@ const { typeDefs, resolvers } = require("./schemas");
 
 // Server info - initialized app and creates port
 const PORT = process.env.PORT || 3001;
-const app = express();
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
 });
-
+const app = express();
 // New instance of Apollo server w/ GraphQL schema
 
 const startApolloServer = async () => {

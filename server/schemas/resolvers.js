@@ -1,10 +1,7 @@
-const {
-  AuthenticationError,
-  UserInputError,
-} = require("apollo-server-express");
+
 const Pet = require("../models/Pet");
 const User = require("../models/User");
-const { signToken } = require("../utils/auth");
+const { signToken, AuthenticationError } = require("../utils/auth");
 
 
 // Creates the functions that fulfill the queries defined in typeDefs
@@ -59,6 +56,8 @@ const resolvers = {
     },
     // Create pet
     createPet: async (parent, { _id }, context) => {
+      console.log(context)
+      console.log(context.user)
       if (context.user) {
         const pet = new Pet({ _id });
 
