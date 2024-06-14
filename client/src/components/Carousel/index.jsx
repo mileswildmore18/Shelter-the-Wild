@@ -13,7 +13,8 @@ import { autoPlay } from 'react-swipeable-views-utils';
 import animal1 from '../Images/cat.jpg';
 import animal2 from '../Images/corgi.jpg';
 import animal3 from '../Images/pitbull.jpg';
-
+import './carousel.css'; 
+// importing my css file
 
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
@@ -55,10 +56,11 @@ function SwipeableTextMobileStepper() {
   };
 
   return (
-    <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
+    <Box className="carousel-container" sx={{ maxWidth: 400, flexGrow: 1 }}>
       <Paper
         square
         elevation={0}
+        className="carousel-image"
         sx={{
           display: 'flex',
           alignItems: 'center',
@@ -67,7 +69,7 @@ function SwipeableTextMobileStepper() {
           bgcolor: 'background.default',
         }}
       >
-        <Typography>{images[activeStep].label}</Typography>
+        <Typography className="carousel-typography">{images[activeStep].label}</Typography>
       </Paper>
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
