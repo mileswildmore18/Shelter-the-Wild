@@ -67,9 +67,7 @@ function SwipeableTextMobileStepper() {
           alignItems: 'center',
           height: 1,
           pl: 0,
-          bgcolor: 'background.default',
-          
-      
+          bgcolor: 'background.default',   
         }}
       >
         <Typography>{images[activeStep].label}</Typography>
@@ -87,13 +85,8 @@ function SwipeableTextMobileStepper() {
                 component="img"
                 sx={{
                   height: 700,
-                  
-                  maxWidth: 2500,
-                  
-                  width: 2000,
-                  borderRadius: 1,
-                 
-                
+                  maxWidth: 2500,                 
+                  width: 2000,                               
                 }}
                 src={step.imgPath}
                 alt={step.label}
