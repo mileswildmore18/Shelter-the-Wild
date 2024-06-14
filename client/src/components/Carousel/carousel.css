@@ -1,21 +1,15 @@
-/* carousel.css */
-
-/* Add your custom styles here */
+/* adding my custom styles here */
 
 .carousel-container {
-    /* Add styles for the container */
+
 }
 
 .carousel-image {
-    /* Add styles for the carousel images */
-}
+    width: 100%;
+    display: block;
 
-.carousel-label {
-    /* Add styles for the carousel label */
 }
 
 .carousel-typography {
-    /* Add styles for the carousel buttons */
-}
 
-/* Add more styles as needed */
+}
