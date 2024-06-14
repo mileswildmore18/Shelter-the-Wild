@@ -6,13 +6,16 @@ import animal2 from '../Images/corgi.jpg';
 import animal3 from '../Images/pitbull.jpg';
 import AxiosReq from '../API/AxiosReq';
 
+
+
 const Home = () => {
     return (
         <div className="home">
+            <SwipeableTextMobileStepper/>
             <h1>Make A Difference!</h1>
             <div className="animal-images">
 
-              <SwipeableTextMobileStepper/>
+              
 
                 <a href="/animal1" className="animal-link">
                     <div className="overlay">

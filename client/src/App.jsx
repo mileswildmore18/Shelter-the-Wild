@@ -45,9 +45,9 @@ const App = () => {
         <Navbar />
 
         <DogAnimation />
+        
 
         <Home />
-
         <AboutUs />
         <Outlet />
         <Footer />

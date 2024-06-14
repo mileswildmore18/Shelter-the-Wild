@@ -10,9 +10,11 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 
-import animal1 from '../Images/cat.jpg';
-import animal2 from '../Images/corgi.jpg';
-import animal3 from '../Images/pitbull.jpg';
+import animal1 from '../Images/cat2.jpg';
+import animal2 from '../Images/dog1.jpg';
+import animal3 from '../Images/dog2.jpg';
+import animal4 from '../Images/cat3.jpg';
+
 
 
 
@@ -20,21 +22,22 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
   {
-    label: 'cat',
+    label: '',
     imgPath: animal1,
   },
   {
-    label: 'corgi',
+    label: '',
     imgPath:animal2,
   },
   {
-    label: 'cat,dog',
+    label: '',
     imgPath: animal3
   },
   {
-    label: 'dog',
-    imgPath: animal2,
+    label: '',
+    imgPath: animal4,
   },
+  
 ];
 
 function SwipeableTextMobileStepper() {
@@ -55,16 +58,18 @@ function SwipeableTextMobileStepper() {
   };
 
   return (
-    <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
+    <Box sx={{ maxWidth: 1800, flexGrow: 1 }}>
       <Paper
         square
         elevation={0}
         sx={{
           display: 'flex',
           alignItems: 'center',
-          height: 50,
-          pl: 2,
+          height: 1,
+          pl: 0,
           bgcolor: 'background.default',
+          
+      
         }}
       >
         <Typography>{images[activeStep].label}</Typography>
@@ -81,11 +86,14 @@ function SwipeableTextMobileStepper() {
               <Box
                 component="img"
                 sx={{
-                  height: 255,
-                  display: 'block',
-                  maxWidth: 400,
-                  overflow: 'hidden',
-                  width: '100%',
+                  height: 700,
+                  
+                  maxWidth: 2500,
+                  
+                  width: 2000,
+                  borderRadius: 1,
+                 
+                
                 }}
                 src={step.imgPath}
                 alt={step.label}
