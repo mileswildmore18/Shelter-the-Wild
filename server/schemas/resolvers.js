@@ -4,299 +4,86 @@ const {
 } = require("apollo-server-express");
 const Pet = require("../models/Pet");
 const User = require("../models/User");
-const Breed = require("../models/Breed");
-const Group = require("../models/Group");
 const { signToken } = require("../utils/auth");
 
 
 // Creates the functions that fulfill the queries defined in typeDefs
 const resolvers = {
   Query: {
-    // Multiple users
-    users: async () => {
-      return User.find().populate("pets");
-    },
-    // user profile
+    // Get current User
     me: async (parent, args, context) => {
       if (context.user) {
-        // Populate the pets subdocument on every instance of User
-        const userData = await User.findOne({ _id: context.user._id })
-          .select("-__v -password")
-          .populate({
-            path: "pets",
-            populate: { path: "petOwner" }, // Populate petOwner
-          });
-        return userData;
+        const user = await User.findById(context.user._id).populate({
+          path: 'pets',
+          populate: 'pet'
+        })
+
+        user
       }
-      throw new AuthenticationError("You need to be logged in!");
     },
-    //  Single user
-    user: async (parent, { userId }) => {
-      const user = await User.findOne({ _id: userId }).populate("pets");
+    // Get single pet
+    pet: async (parent, { id }) => {
+      return await Pet.findById(_id).populate('Pet')
+    },
+    // Get all pets
+    pets: async () => {
+      return await Pet.find();
 
-      user.pets.sort((a, b) => b.petName - a.petName);
-
-      return user;
-    },
-    // all pets
-    pets: async (parent, { userId }) => {
-      const params = userId ? { userId } : {};
-      return Pet.find(params).sort({ petName: -1 });
-    },
-    // single pet
-    pet: async (parent, { petId }) => {
-      return Pet.findOne({ _id: petId });
-    },
-    // all breeds
-    breeds: async () => {
-      return Breed.find().sort({ createdAt: -1 });
-    },
-    // single breed
-    breed: async (parent, { breedId }) => {
-      return Breed.findOne({ _id: breedId });
-    },
-    // all posts
-    posts: async () => {
-      return Post.find().sort({ createdAt: -1 });
-    },
-    // all groups
-    groups: async () => {
-      return Group.find().sort({ createdAt: -1 });
-    },
-    // single group
-    group: async (parent, { groupId }) => {
-      return Group.findOne({ _id: groupId });
-    },
-    // posts by pet
-    postsByPet: async (parent, args) => {
-      try {
-        const posts = await Post.find({ petId: args.petId })
-          .populate("petId")
-          .populate("createdBy");
-
-        return posts;
-      } catch (error) {
-        throw new Error(error.message);
-      }
     },
   },
-  // Defines the functions that will fulfill the mutations
+
   Mutation: {
-    // login
+    // Login
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError("No user found with this email address");
+        throw new AuthenticationError("Error! User not found!");
       }
 
       const correctPassword = await user.isCorrectPassword(password);
 
       if (!correctPassword) {
-        throw new AuthenticationError("Incorrect Credentials");
+        throw new AuthenticationError("Error! Incorrect password!");
       }
 
       const token = signToken(user);
       return { token, user };
     },
-    // add user
-    addUser: async (parent, { username, email, password }) => {
-      const user = await User.create({ username, email, password });
+    // Add user
+    addUser: async (parent, args) => {
+      const user = await User.create(args);
       const token = signToken(user);
+
       return { token, user };
     },
-    // create breed
-    createBreed: async (
-      parent,
-      {
-        Breed,
-        breedDescription,
-        petName,
-        Group,
-        image,
-        description,
-        image,
-      },
-      context
-    ) => {
+    // Create pet
+    createPet: async (parent, { _id }, context) => {
       if (context.user) {
-        // Check if the petId exists and retrieve the corresponding pet
-        const pet = Pet.findOne({ _id: petId });
+        const pet = new Pet({ _id });
 
-        if (!pet) {
-          throw new Error("Pet not found");
-        }
-
-        console.log(pet);
-
-        const breed = await Breed.create({
-          breed,
-          breedDescription,
-          petName,
-          group,
-          image,
-          description,
-          petId: pet.id,
-          createdBy: context.user._id,
-        });
-        // Populate the createdBy field with the user data
-        const populatedBreed = await Breed.findById(breed._id).populate(
-          "createdBy",
-          "petId"
-        );
-
-        // Return the created marker
-        return populatedBreed;
-      } else {
-        throw new AuthenticationError("Not logged in");
-      }
-    },
-    // create Pet
-    createPet: async (
-      parent,
-      {
-        petId,
-        petName,
-        description,
-        image,
-        posts,
-      },
-      context
-    ) => {
-      if (context.user) {
-        const pet = await Pet.create({
-          petName,
-          description,
-          animalType,
-          image,
-          posts,
-        });
-
-        // Return the created marker
-        return petId;
-      } else {
-        throw new AuthenticationError("Not logged in");
-      }
-    },
-    //Adding the breed
-    addBreed: async (_, { breed }) => {
-      const newBreed = new Breed({
-        ...breed,
-        group: breed.group,
-      });
-      await newBreed.save();
-      return newBreed;
-    },
-
-    //updating the breed on the user's search of the breed they want to change to
-    updateBreed: async (_, { breedId, breed }) => {
-      const updatedBreed = await Breed.findByIdAndUpdate(breedId, breed, { new: true });
-      if (!updatedBreed) {
-        throw new Error('Breed not found');
-      }
-      return updatedBreed;
-    },
-    //deleting the breed based on ID on the user's search for removing the breed
-    removeBreed: async (_, { breedId }) => {
-      const deletedCount = await Breed.deleteOne({ _id: breedId });
-      if (deletedCount.deletedCount === 0) {
-        throw new Error('Breed not found');
-      }
-      return true;
-    },
-    //Creating a group based on the breed users are looking for
-    addGroup: async (_, { group }) => {
-      const newGroup = new Group({
-       ...group,
-      });
-      await newGroup.save();
-      return newGroup;
-    },
-    //Changing the group based on the breed users are looking for
-    updateGroup: async (_, { groupId, group }) => {
-      const updatedGroup = await Group.findByIdAndUpdate(groupId, group, { new: true });
-      if (!updatedGroup) {
-        throw new Error('Group not found');
-      }
-      return updatedGroup;
-    },
-    //Removing the group based on the breed users are looking for
-    removeGroup: async (_, { groupId }) => {
-      const deletedCount = await Group.deleteOne({ _id: groupId });
-      if (deletedCount.deletedCount === 0) {
-        throw new Error('Group not found');
-      }
-      return true;
-    },
-    // Add a post to a pet
-    addPost: async (_, { postContent, petId }, context) => {
-      if (context.user) {
-        const params = petId ? { petId } : {};
-        const pet = Pet.findById(params);
-        // Find the pet by ID
-        console.log("petID" + pet);
-        console.log("pet id: " + pet._id);
-        const post = await Post.create({
-          postContent,
-          petId: pet._id,
-          createdBy: context.user._id,
-        });
-        await Pet.findOneAndUpdate(
-          { _id: pet._id },
-          { $addToSet: { posts: post._id } }
-        ).populate("petId");
-        return post;
-      }
-      throw new AuthenticationError("Not logged in");
-    },
-
-    // Update a post on a pet
-    updatePost: async (_, { postId, postContent }, context) => {
-      if (context.user) {
-        // Find the pet by ID
-        const pet = await Pet.findById(postId);
-
-        if (!pet) {
-          throw new Error("Pet not found");
-        }
-
-        // Find the post within the pet's posts array
-        const postToUpdate = pet.posts.find(
-          (post) => post._id.toString() === postId
-        );
-
-        if (!postToUpdate) {
-          throw new Error("Post not found");
-        }
-
-        // Update the post's content
-        postToUpdate.content = postContent;
-
-        await pet.save();
+        await User.findByIdAndUpdate(context.user._id, { $push: { pets: pet} });
 
         return pet;
       }
-      throw new AuthenticationError("Not logged in");
-    },
 
-    // Delete a post from a pet
-    removePost: async (_, { postId, petId }, context) => {
+      throw AuthenticationError;
+    },
+    // Update pet
+    updatePet: async (parent, { _id }, context) => {
       if (context.user) {
-        return Pet.findOneAndUpdate(
-          { _id: petId },
-          {
-            $pull: {
-              posts: {
-                _id: postId,
-                createdBy: context.user._id,
-              },
-            },
-          },
-          { new: true }
-        );
-      } else {
-        throw new AuthenticationError("Not logged in");
+      return await User.findByIdAndUpdate(context.user._id, _id, { new: true });
+    }
+
+    throw AuthenticationError;
+  },
+    // Delete pet
+    removePet: async (parent, { _id }, context) => {
+      if (context.user) {
+        return await User.findByIdAndDelete(context.user._id, _id)
       }
+
+      throw AuthenticationError;
     },
   },
 };
