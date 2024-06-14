@@ -115,7 +115,6 @@ const resolvers = {
         Group,
         image,
         description,
-        petId: Pet.id,
         image,
       },
       context
@@ -151,7 +150,7 @@ const resolvers = {
       } else {
         throw new AuthenticationError("Not logged in");
       }
-    };
+    },
     // create Pet
     createPet: async (
       parent,
@@ -178,6 +177,56 @@ const resolvers = {
       } else {
         throw new AuthenticationError("Not logged in");
       }
+    },
+    //Adding the breed
+    addBreed: async (_, { breed }) => {
+      const newBreed = new Breed({
+        ...breed,
+        group: breed.group,
+      });
+      await newBreed.save();
+      return newBreed;
+    },
+
+    //updating the breed on the user's search of the breed they want to change to
+    updateBreed: async (_, { breedId, breed }) => {
+      const updatedBreed = await Breed.findByIdAndUpdate(breedId, breed, { new: true });
+      if (!updatedBreed) {
+        throw new Error('Breed not found');
+      }
+      return updatedBreed;
+    },
+    //deleting the breed based on ID on the user's search for removing the breed
+    removeBreed: async (_, { breedId }) => {
+      const deletedCount = await Breed.deleteOne({ _id: breedId });
+      if (deletedCount.deletedCount === 0) {
+        throw new Error('Breed not found');
+      }
+      return true;
+    },
+    //Creating a group based on the breed users are looking for
+    addGroup: async (_, { group }) => {
+      const newGroup = new Group({
+       ...group,
+      });
+      await newGroup.save();
+      return newGroup;
+    },
+    //Changing the group based on the breed users are looking for
+    updateGroup: async (_, { groupId, group }) => {
+      const updatedGroup = await Group.findByIdAndUpdate(groupId, group, { new: true });
+      if (!updatedGroup) {
+        throw new Error('Group not found');
+      }
+      return updatedGroup;
+    },
+    //Removing the group based on the breed users are looking for
+    removeGroup: async (_, { groupId }) => {
+      const deletedCount = await Group.deleteOne({ _id: groupId });
+      if (deletedCount.deletedCount === 0) {
+        throw new Error('Group not found');
+      }
+      return true;
     },
     // Add a post to a pet
     addPost: async (_, { postContent, petId }, context) => {
