@@ -1,25 +1,21 @@
-import react from 'react';
-import logo from './logo.svg';
-import'./blog.css'; 
+import React from 'react';
+import React from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+import { ThemeProvider } from '@material-ui/core/styles';
+import theme from './theme';
 
-function Blog () {
-    return (
-        <div className='App'>
-            <header className='App-header'>
-                <img src={logo} className='App-logo' alt='logo'/>
-                <p>
-                    Edit <code>src/App.js</code> and save to load.
-                </p>
-                <a
-                className='App-link'
-                href='https://reactjs.org
-                target='_blank'
-                rel='nooopener noreferrence'
-                >
-                    Trying to learn react
-                    </a>
-            </header>
-        </div>
-    );
-}
-export default Blog;
+
+ReactDOM.render(
+    <React.StrictMode>
+        <ThemeProvider theme={theme}>
+        <App />
+        </ThemeProvider>
+          </React.StrictMode>,
+    document.getElementById('root')
+  
+);
+
+// if i want the app to work offline and load faster i can change unregister() to register() belowbut it is not recomended.
+serviceWorker.unregister();
