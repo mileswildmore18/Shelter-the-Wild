@@ -14,15 +14,7 @@ const typeDefs = `
     _id: ID
     petName: String
     description: String
-    microchipRegistry: String
-    microchipNumber: String
-    petOwner: User
-    petOwnerUsername: String
-    animalType: AnimalType
-    isMissing: Boolean
-    geometry: GeoJSON
     image: String
-    markers: [Marker]
     posts: [Post]
   }
 
@@ -56,21 +48,73 @@ const typeDefs = `
     breeds: [breedData]
   }
 
-  enum AnimalType {
-    DOG
-    CAT
-    OTHER
-  }
-
   type Query {
     users: [User]
     me: User
     user(userId: ID!): User
     pets: [Pet]
     pet(petId: ID!): Pet
-    Breeds: [Breed]
-    Group(groupId: ID!): Post
+    breeds: [Breed]
+    breed(breedId: ID!): Breed
+    groups: [Group]
+    group(groupId: ID!): Group
     postsByPet(petId: ID!): [Post]
+  }
+
+mutation AddBreed($breed: BreedInput!) {
+  addBreed(breed: $breed): Breed
+}
+
+input BreedInput {
+  _id: ID
+  animal: String
+  breed: String
+  description: String
+  image: String
+  group: ID!
+}
+
+mutation UpdateBreed($breedId: ID!, $breed: BreedInput) {
+  updateBreed(breedId: $breedId, breed: $breed): Breed
+}
+
+mutation RemoveBreed($breedId: ID!) {
+  removeBreed(breedId: $breedId): Boolean
+}
+
+mutation AddGroup($group: GroupInput!) {
+  addGroup(group: $group): Group
+}
+
+input GroupInput {
+  _id: ID
+  groupId: [String]
+  groupName: String
+  details: String
+}
+
+mutation UpdateGroup($groupId: ID!, $group: GroupInput) {
+  updateGroup(groupId: $groupId, group: $group): Group
+}
+
+mutation RemoveGroup($groupId: ID!) {
+  removeGroup(groupId: $groupId): Boolean
+}
+
+  input BreedInput {
+  _id: ID
+  animal: String
+  breed: String
+  description: String
+  image: String
+  group: ID!
+  }
+
+  input GroupInput {
+  _id: ID
+  groupId: [String]
+  groupName: String
+  details: String
   }
 
   type Mutation {
@@ -78,9 +122,13 @@ const typeDefs = `
     addUser(username: String!, email: String!, password: String!): Auth
     createBreed(breed: BreedData): Breed
     addGroup(groupId: ID!, postContent: String!): Post
-    createPet(pet: PetData): Post
-    updatePet(postContent: String!): Post
-    removePet(postId: ID!): Post
+    addBreed(breed: BreedInput): Breed
+    updateBreed)breedId: ID!, breed: BreedInput): Breed
+    removeBreed(breedId: ID): Boolean
+    addGroup(group: GroupInput): Group
+    updateGroup(groupId: ID!, group: GroupInput): Group
+    removeGroup(groupId: ID): Boolean
+
   }
 `;
 

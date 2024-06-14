@@ -43,47 +43,29 @@ const resolvers = {
       const params = userId ? { userId } : {};
       return Pet.find(params).sort({ petName: -1 });
     },
-    // pets by missing === true
-    petsByMissing: async (_, { isMissing }) => {
-      try {
-        // Query the database to find pets based on the isMissing parameter
-        const pets = await Pet.find({ isMissing: true });
-        return pets;
-      } catch (error) {
-        throw new Error("Failed to fetch pets by missing status");
-      }
-    },
     // single pet
     pet: async (parent, { petId }) => {
       return Pet.findOne({ _id: petId });
     },
-    // all markers
-    markers: async () => {
-      return Marker.find().sort({ createdAt: -1 });
+    // all breeds
+    breeds: async () => {
+      return Breed.find().sort({ createdAt: -1 });
     },
-    // single marker
-    marker: async (parent, { markerId }) => {
-      return Marker.findOne({ _id: markerId });
-    },
-    // markers by pet
-    markersByPet: async (parent, { petId }) => {
-      const params = petId ? { petId } : {};
-      try {
-        const markers = await Pet.find(params).populate("markers");
-        console.log(markers);
-
-        return markers;
-      } catch (error) {
-        throw new Error(error.message);
-      }
+    // single breed
+    breed: async (parent, { breedId }) => {
+      return Breed.findOne({ _id: breedId });
     },
     // all posts
     posts: async () => {
       return Post.find().sort({ createdAt: -1 });
     },
-    // single marker
-    post: async (parent, { postId }) => {
-      return Post.findOne({ _id: postId });
+    // all groups
+    groups: async () => {
+      return Group.find().sort({ createdAt: -1 });
+    },
+    // single group
+    group: async (parent, { groupId }) => {
+      return Group.findOne({ _id: groupId });
     },
     // posts by pet
     postsByPet: async (parent, args) => {
@@ -123,7 +105,7 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    // create marker
+    // create breed
     createBreed: async (
       parent,
       {
@@ -134,7 +116,6 @@ const resolvers = {
         image,
         description,
         petId: Pet.id,
-        coordinates,
         image,
       },
       context
@@ -178,15 +159,7 @@ const resolvers = {
         petId,
         petName,
         description,
-        microchipRegistry,
-        microchipNumber,
-        petOwner,
-        petOwnerUsername,
-        animalType,
-        isMissing,
-        geometry,
         image,
-        markers,
         posts,
       },
       context
@@ -195,15 +168,8 @@ const resolvers = {
         const pet = await Pet.create({
           petName,
           description,
-          microchipRegistry,
-          microchipNumber,
-          petOwner: context.user._id,
-          petOwnerUsername,
           animalType,
-          isMissing,
-          geometry,
           image,
-          markers,
           posts,
         });
 
