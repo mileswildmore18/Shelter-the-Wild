@@ -44,16 +44,3 @@ const AxiosReq = () => {
   )}
   export default AxiosReq;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
