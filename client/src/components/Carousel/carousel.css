@@ -1,7 +1,9 @@
 /* adding my custom styles here */
 
 .carousel-container {
-
+width: 100%;
+position: 100%;
+overflow: hidden;
 }
 
 .carousel-image {
