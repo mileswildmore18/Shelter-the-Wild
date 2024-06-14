@@ -20,51 +20,54 @@ const Navbar = () => {
       <Toolbar id='padding-xs' style={{ display: "flex", justifyContent: "space-between" }}>
 
         <Link to='/' style={{ textDecoration: "none", color: "inherit" }}>
-          <h1 style={{ marginLeft: "650px" }}>Shelter the Wild</h1>
+          <h1 style={{ marginLeft: "30px" }}>Shelter the Wild</h1>
 
           {/* <img src={logo} alt='PARSR Logo' style={{ height: "100px" }} /> */}
         </Link>
-          
 
-          <div className='flexbox-turn-on' id='right-header'>
+
+        <div className='flexbox-turn-on' id='right-header'>
+          <>
+            {/* <Button color='inherit' component={Link} to='/donate'>
+              Donate
+            </Button> */}
+          </>
+          <div className='flexbox-turn-on' id='and-another-one'>
             <>
-              <Button color='inherit' component={Link} to='/donate'>
-                Donate
-              </Button>
+              <Search id='hidden-break' />
             </>
-            <div className='flexbox-turn-on' id='and-another-one'>
-              <>
-                <Search id='hidden-break' />
-              </>
-              <>
-                {Auth.loggedIn() ? (
-                  <div
-                    className='flexbox-turn-on'
-                    id='furthest-right-header-avatar'
+            <>
+              {Auth.loggedIn() ? (
+                <div
+                  className='flexbox-turn-on'
+                  id='furthest-right-header-avatar'
+                >
+                  <Avatar
+                    component={Link}
+                    to='/profile'
+                    src={CatImage}
+                    alt='Profile'
+                    sx={{ height: "40px" }}
+                    id='avatar'
                   >
-                    <Avatar
-                      component={Link}
-                      to='/profile'
-                      src={CatImage}
-                      alt='Profile'
-                      sx={{ height: "40px" }}
-                      id='avatar'
-                    >
-                    </Avatar>
-                    <Button color='inherit' onClick={logout}>
-                      Logout
-                    </Button>
-                  </div>
-                ) : (
-                  <div className='flexbox-turn-on' id='furthest-right-header'>
-                    <Button color='inherit' component={Link} to='/login'>
-                      Login
-                    </Button>
-                  </div>
-                )}
-              </>
-            </div>
+                  </Avatar>
+                  <Button color='inherit' onClick={logout}>
+                    Logout
+                  </Button>
+                </div>
+              ) : (
+                <div className='flexbox-turn-on' id='furthest-right-header'>
+                  <Button color='inherit' component={Link} to='/login'>
+                    Login
+                  </Button>
+                  <Button color='inherit' component={Link} to='/donate'>
+                    Donate
+                  </Button>
+                </div>
+              )}
+            </>
           </div>
+        </div>
       </Toolbar>
     </AppBar>
   );
