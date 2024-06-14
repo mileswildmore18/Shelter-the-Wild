@@ -1,6 +1,9 @@
 const { GraphQLError } = require("graphql");
 const mongoose = require('mongoose');
 const jwt = require("jsonwebtoken");
+require('dotenv').config();
+const secret = process.env.SECRET;
+const expiration = "2hr"
 
 const UserSchema = mongoose.Schema({
   username: String,
@@ -12,6 +15,11 @@ UserSchema.virtual('token').get(function() {
 })
 
 module.exports =  {
+  AuthenticationError: new GraphQLError('Could Not authenticate user.', {
+    extensions: {
+      code: 'UNAUTHENTICATED',
+    },
+  }),
   authMiddleware: function ({ req }) {
     // Token sent via req.body, req.query, or headers
     let token = req.body.token || req.query.token || req.headers.authorization;
