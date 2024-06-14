@@ -8,12 +8,13 @@ const Footer = () => {
         <footer className="footer">
             <div className="footer-content">
                 <img src={logo} alt="Shelter The Wild Logo" className="footer-logo" />
-                <p>&copy; {new Date().getFullYear()} <span style={{ fontStyle: 'italic' }}>Shelter the Wild</span></p>
-                <a href="/contact">Contact Us</a>
+                
+                <a href="/contact"></a>
                 <div className="social-icons">
                     <a href="https://www.facebook.com/yourpage"><FaFacebook /></a>
                     <a href="https://www.twitter.com/yourpage"><FaTwitter /></a>
                     <a href="https://www.instagram.com/yourpage"><FaInstagram /></a>
+                    <p>&copy; {new Date().getFullYear()} <span style={{ fontStyle: 'italic' }}>Shelter the Wild</span></p>
                 </div>
             </div>
         </footer>
