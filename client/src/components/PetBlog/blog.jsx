@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './blog.css'; 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
