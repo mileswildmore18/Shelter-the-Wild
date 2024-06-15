@@ -42,7 +42,7 @@ const petSchema = new Schema(
       type: String,
     },
 
-    image: {
+    animalType: {
       type: String,
     },
     breed: {

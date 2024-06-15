@@ -20,7 +20,7 @@ const typeDefs = `
     intakeType: String
     urlLink: String
     animalId: String
-    image: String
+    animalType: String
     breed: String
   }
 
