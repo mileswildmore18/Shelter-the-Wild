@@ -43,10 +43,7 @@ const App = () => {
     <>
       <ApolloProvider client={client}>
         <Navbar />
-
         <DogAnimation />
-        
-
         <Home />
         <AboutUs />
         <Outlet />
