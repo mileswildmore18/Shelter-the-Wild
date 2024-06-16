@@ -59,6 +59,10 @@ Link to get node.js: https://nodejs.org/
 ## Questions
 If you would like contact me for further information, be sure to reach out to me at mileswildmore@hotmail.com
 
-If you would like to know how to setup dependencies and more projects, check out our repos at https://github.com/mileswildmore18
+If you would like to know how to setup dependencies and more projects, check out our repos at 
+
+https://github.com/mileswildmore18
+
 https://github.com/ParryProgramming
+
 https://github.com/oooweeee
