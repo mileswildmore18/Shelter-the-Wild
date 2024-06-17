@@ -1,5 +1,5 @@
 import React from 'react';
-import './home.css';
+import './index.css';
 import SwipeableTextMobileStepper from '../Carousel';
 import animal1 from '../../assets/images/cat.jpg';
 import animal2 from '../../assets/images/corgi.jpg';
