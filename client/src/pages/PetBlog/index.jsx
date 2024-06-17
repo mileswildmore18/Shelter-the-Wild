@@ -23,4 +23,36 @@ const blogPosts = [
   },
 ];
 //  defineing a functional component called PetBlog
-const PetBlog = () => {}
+const PetBlog = () => {
+    return (
+      <Container maxWidth="lg"> 
+        <Typography variant="h2" component="h1" gutterBottom>
+          Pet Blog
+        </Typography>
+        <Grid container spacing={4}>
+          {blogPosts.map((post, index) => (
+            <Grid item key={index} xs={12} sm={6} md={4}>
+              <Card>
+                <CardMedia
+                  component="img"
+                  height="140"
+                  image={post.imageUrl}
+                  alt={post.title}
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    {post.title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {post.description}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    );
+  };
+  
+  export default PetBlog; // Exporting the PetBlogPage component
