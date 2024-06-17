@@ -21,16 +21,12 @@ const Navbar = () => {
         <Link to='/' style={{ textDecoration: "none", color: "inherit" }}>
           <h1 style={{ marginLeft: "30px" }}>Shelter the Wild</h1>
 
-          {/* <img src={logo} alt='PARSR Logo' style={{ height: "100px" }} /> */}
+    
         </Link>
 
 
         <div className='flexbox-turn-on' id='right-header'>
-          <>
-            {/* <Button color='inherit' component={Link} to='/donate'>
-              Donate
-            </Button> */}
-          </>
+  
           <div className='flexbox-turn-on' id='and-another-one'>
             <>
               <Search id='hidden-break' />
@@ -59,9 +55,7 @@ const Navbar = () => {
                   <Button color='inherit' component={Link} to='/login'>
                     Login
                   </Button>
-                  <Button color='inherit' component={Link} to='/donate'>
-                    Donate
-                  </Button>
+          
                 </div>
               )}
             </>
