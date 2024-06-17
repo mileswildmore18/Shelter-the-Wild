@@ -5,7 +5,7 @@ const axios = require('axios');
 async function gql(query, operationName, variables = {}) {
     const endpoint = 'shelter_db'
     const headers = {
-        'Authoriztion': `Bearer ${process.env.RAPIDAPI_KEY}`,
+        'Authorization': `Bearer ${process.env.RAPIDAPI_KEY}`,
         'Content-Type': 'application/json',
     };
 
