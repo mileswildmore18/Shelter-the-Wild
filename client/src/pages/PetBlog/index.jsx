@@ -22,3 +22,5 @@ const blogPosts = [
     imageUrl: animal3, // Image URL for the third blog post, referencing `animal3`
   },
 ];
+//  defineing a functional component called PetBlog
+const PetBlog = () => {}
