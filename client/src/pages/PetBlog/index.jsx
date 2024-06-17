@@ -11,4 +11,14 @@ const blogPosts = [
     description: 'Dive into the fascinating world of cats and discover their mysterious ways.', // Description of the first blog post
     imageUrl: animal1, // Image URL for the first blog post, referencing `animal1`
   },
+  {
+    title: 'Corgis: The Royal Companions', // Title of the second blog post
+    description: 'Learn why Corgis have been favored by royalty and what makes them such special pets.', // Description of the second blog post
+    imageUrl: animal2, // Image URL for the second blog post, referencing `animal2`
+  },
+  {
+    title: 'Understanding Pitbulls', // Title of the third blog post
+    description: 'Breaking the myths and understanding the true nature of Pitbulls.', // Description of the third blog post
+    imageUrl: animal3, // Image URL for the third blog post, referencing `animal3`
+  },
 ];
