@@ -12,8 +12,6 @@
     "render-build": "npm install && npm run build"
   },
   "devDependencies": {
-
     "concurrently": "^8.2.2"
-  
   }
 }
