@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import Search from "../../components/Search";
 import Auth from "../../utils/auth";
-import logo from "../../assets/images/parsr-logo.png";
-import CatImage from "../../assets/images/SVG/cat-03-front.svg";
+import CatImage from "../../assets/images/cat.jpg";
 import "./style.css";
 import Avatar from "@mui/material/Avatar";
 import AppBar from "@mui/material/AppBar";

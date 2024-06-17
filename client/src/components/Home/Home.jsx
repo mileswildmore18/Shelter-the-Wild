@@ -1,9 +1,9 @@
 import React from 'react';
-import '../Home/Home.css';
+import './home.css';
 import SwipeableTextMobileStepper from '../Carousel';
-import animal1 from '../Images/cat.jpg';
-import animal2 from '../Images/corgi.jpg';
-import animal3 from '../Images/pitbull.jpg';
+import animal1 from '../../assets/images/cat.jpg';
+import animal2 from '../../assets/images/corgi.jpg';
+import animal3 from '../../assets/images/pitbull.jpg';
 import AxiosReq from '../API/AxiosReq';
 
 const Home = () => {

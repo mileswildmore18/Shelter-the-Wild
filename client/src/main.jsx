@@ -4,18 +4,14 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 
 /// IMPORT PAGES ///
-import Landing from "./pages/Landing";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import UserDashboard from "./pages/UserDashboard";
 import About from "./pages/About";
 import Error from "./pages/Error";
 import Profile from "./pages/Profile";
-import Pet from "./pages/Pet";
-import MapPage from "./pages/Map/";
-import Test from "./pages/Test";
-import Donate from "./pages/Donate";
 import Home from "./pages/Home";
+import PetBlog from "./pages/PetBlog";
 
 
 const router = createBrowserRouter([
@@ -26,7 +22,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Landing />,
+        element: <Home />,
       },
       {
         path: "/signup",
@@ -41,28 +37,17 @@ const router = createBrowserRouter([
         element: <UserDashboard />,
       },
       {
+        path: "/blog",
+        element: <PetBlog />,
+      },
+      {
         path: "/profile/:profileId",
         element: <Profile />,
       },
-      {
-        path: "/pet/:petId",
-        element: <Pet />,
-      },
+ 
       {
         path: "/about",
         element: <About />,
-      },
-      {
-        path: "/map",
-        element: <MapPage />,
-      },
-      {
-        path: "/test",
-        element: <Test />,
-      },
-      {
-        path: "/donate",
-        element: <Donate />,
       },
     ],
   },

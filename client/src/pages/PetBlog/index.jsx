@@ -1,8 +1,8 @@
-import React from 'react'; // Importing the React library
+
 import { Container, Grid, Card, CardContent, CardMedia, Typography } from '@mui/material'; // Importing specific components from Material-UI
-import animal1 from '../images/cat.jpg'; // Importing an image of a cat and assigning it to `animal1`
-import animal2 from '../images/corgi.jpg'; // Importing an image of a corgi and assigned it to `animal2`
-import animal3 from '../images/Shephard.jpg'; // caught another image of a pitbull and assigned it to `animal3`
+import animal1 from '../../assets/images/cat.jpg'; // Importing an image of a cat and assigning it to `animal1`
+import animal2 from '../../assets/images/corgi.jpg'; // Importing an image of a corgi and assigned it to `animal2`
+import animal3 from '../../assets/images/Shephard.jpg'; // caught another image of a pitbull and assigned it to `animal3`
 
 // / Define an array blogPosts containing objects for each blog post with title, description, and imageUrl properties
 const blogPosts = [
