@@ -69,26 +69,26 @@ function SwipeableTextMobileStepper() {
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={activeStep}
-        onChangeIndex={handleStepChange}
-        enableMouseEvents
+        onChange={(index) => setActiveStep(index)}
+        animation="slide"
+        sx={{ height: 700, maxWidth: 2500, width: 2000 }} // Adjust dimensions as needed
       >
-        {images.map((step, index) => (
-          <div key={step.label}>
-            {Math.abs(activeStep - index) <= 2 ? (
-              <Box
-                component="img"
-                sx={{
-                  height: 255,
-                  display: 'block',
-                  maxWidth: 400,
-                  overflow: 'hidden',
-                  width: '100%',
-                }}
-                src={step.imgPath}
-                alt={step.label}
-              />
-            ) : null}
-          </div>
+        {images.map((step) => (
+          <Box
+            key={step.label}
+            sx={{
+              height: 700, // Adjust height as needed
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <img
+              src={step.imgPath}
+              alt={step.label}
+              style={{ maxWidth: '100%', maxHeight: '100%' }} // Ensure the image fits within the container
+            />
+          </Box>
         ))}
       </AutoPlaySwipeableViews>
       <MobileStepper
