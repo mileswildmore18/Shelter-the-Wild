@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import Carousel from '@mui/material/Carousel';
+// import Carousel from '@mui/material/Carousel';
 
 import animal1 from '../../assets/images/cat2.jpg';
 import animal2 from '../../assets/images/dog1.jpg';
@@ -63,12 +63,12 @@ function SwipeableTextMobileStepper() {
       >
         <Typography>{images[activeStep].label}</Typography>
       </Paper>
-      <Carousel
+      {/* <Carousel
         index={activeStep}
         onChange={(index) => setActiveStep(index)}
         animation="slide"
         sx={{ height: 700, maxWidth: 2500, width: 2000 }} // Adjust dimensions as needed
-      >
+      > */}
         {images.map((step) => (
           <Box
             key={step.label}
@@ -86,7 +86,7 @@ function SwipeableTextMobileStepper() {
             />
           </Box>
         ))}
-      </Carousel>
+      {/* </Carousel> */}
       <MobileStepper
         steps={maxSteps}
         position="static"
