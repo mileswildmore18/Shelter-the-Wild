@@ -10,10 +10,10 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 
-import animal1 from '../Images/cat2.jpg';
-import animal2 from '../Images/dog1.jpg';
-import animal3 from '../Images/dog2.jpg';
-import animal4 from '../Images/cat3.jpg';
+import animal1 from '../../assets/images/cat2.jpg';
+import animal2 from '../../assets/images/dog1.jpg';
+import animal3 from '../../assets/images/dog2.jpg';
+import animal4 from '../../assets/images/cat3.jpg';
 
 
 
@@ -22,19 +22,19 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
   {
-    label: '',
+    label: '1',
     imgPath: animal1,
   },
   {
-    label: '',
-    imgPath:animal2,
+    label: '2',
+    imgPath: animal2,
   },
   {
-    label: '',
+    label: '3',
     imgPath: animal3
   },
   {
-    label: '',
+    label: '4',
     imgPath: animal4,
   },
   
